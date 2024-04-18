@@ -1,10 +1,4 @@
-# -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  4 11:11:52 2018
 
-@author: lenovo
-"""
 import cv2
 import h5py
 from PIL import Image
@@ -47,7 +41,7 @@ def predict(path):
     count = np.sum(ans)
     return count,image,ans
 """
-#Inference_B_test 只能预测
+#Inference_B_test
 ans,img,hmap = predict('data/test_data/test36.jpg')
 print("Predict Count:",ans)
 plt.imshow(img.reshape(img.shape[1],img.shape[2],img.shape[3]))
@@ -55,7 +49,7 @@ plt.show()
 plt.imshow(hmap.reshape(hmap.shape[1],hmap.shape[2]) , cmap = c.jet )
 plt.show()
 """
-#预测2,3,4
+#2,3,4
 ans,img,hmap = predict('data/part_B_final/test_data/images/IMG_4.jpg')
 print("Predict Count:",ans)
 #Print count, image, heat map
