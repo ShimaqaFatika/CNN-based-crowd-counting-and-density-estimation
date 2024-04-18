@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  3 14:31:33 2018
-
-@author: lenovo
-"""
-
 from keras.layers.normalization import BatchNormalization
 from keras.preprocessing.image import load_img,img_to_array
 from sklearn.metrics import mean_squared_error
@@ -250,5 +243,5 @@ model.summary()
 train_gen = image_generator(img_paths,1)
 sgd = SGD(lr = 1e-7, decay = (5*1e-4), momentum = 0.95)
 model.compile(optimizer=sgd, loss=euclidean_distance_loss, metrics=['mse'])
-model.fit_generator(train_gen,epochs=1,steps_per_epoch= 700 , verbose=1)#训练网络
+model.fit_generator(train_gen,epochs=1,steps_per_epoch= 700 , verbose=1)
 save_mod(model,"weights/model_A_weights.h5","models/Model.json")
