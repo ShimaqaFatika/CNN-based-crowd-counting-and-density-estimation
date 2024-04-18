@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov  5 20:37:27 2018
 
-@author: lenovo
-"""
 
 from keras.models import Model
 from keras.layers import *
