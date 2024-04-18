@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  3 14:46:02 2018
-
-@author: lenovo
-"""
 
 import cv2
 import h5py
