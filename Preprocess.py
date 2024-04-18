@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  3 14:32:23 2018
-生成groundh5文件
 # Data Preprocessing  :
 In data preprocessing, the main objective was to convert the ground truth 
 provided by the ShanghaiTech dataset into density maps. For a given image the dataset 
@@ -17,9 +13,6 @@ Nearest neighbours) of the head annotations.
 2) Find the average distances for each head with K(in this case 4) nearest heads in the head
  annotations. Multpiply this value by a    factor, 0.3 as suggested by the author of the paper.
 3) Put this value as sigma and convolve using the 2D Gaussian filter. 
-
-@author: lenovo
-"""
 
 import h5py
 import scipy.io as io
@@ -53,7 +46,7 @@ def gaussian_filter_density(gt):
     # query kdtree
     distances, locations = tree.query(pts, k=4)
        
-    for i, pt in enumerate(pts):#枚举，返回序列（索引，数据）
+    for i, pt in enumerate(pts):
         pt2d = np.zeros(gt.shape, dtype=np.float32)
         pt2d[pt[1],pt[0]] = 1.
         if gt_count > 1:
@@ -82,7 +75,7 @@ print(len(img_paths))
 
 from tqdm import tqdm
 i = 0
-for img_path in tqdm(img_paths):#tqdm显示进度条
+for img_path in tqdm(img_paths):
            
     # Load sparse matrix
     mat = io.loadmat(img_path.replace('.jpg','.mat').replace('images','ground_truth').replace('IMG_','GT_IMG_'))
@@ -107,7 +100,7 @@ for img_path in tqdm(img_paths):#tqdm显示进度条
     file_path = img_path.replace('.jpg','.h5').replace('images','ground')
     
     #break
-    with h5py.File(file_path, 'w') as hf:#打开文件并最后关闭
+    with h5py.File(file_path, 'w') as hf:
             hf['density'] = k
             
 file_path = img_paths[22].replace('.jpg','.h5').replace('images','ground') 
@@ -115,5 +108,5 @@ print(file_path)
 #Sample Ground Truth
 gt_file = h5py.File(file_path,'r')
 groundtruth = np.asarray(gt_file['density'])
-plt.imshow(groundtruth,cmap=CM.jet)#CM.jet显示蓝-青-黄-红四色
+plt.imshow(groundtruth,cmap=CM.jet)
 print("Sum = " ,np.sum(groundtruth))
