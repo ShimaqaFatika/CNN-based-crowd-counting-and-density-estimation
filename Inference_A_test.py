@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Nov  4 11:11:52 2018
-
-@author: lenovo
-"""
 import cv2
 import h5py
 from PIL import Image
@@ -40,9 +34,9 @@ def create_img(path):
 
 def predict(path):
     #Function to load image,predict heat map, generate count and return (count , image , heat map)
-    model = load_model()#加载模型
-    image = create_img(path)#图像预处理
-    ans =   model.predict(image)#预测数据
+    model = load_model()
+    image = create_img(path)
+    ans =   model.predict(image)
     count = np.sum(ans)
     return count,image,ans
 
@@ -55,7 +49,7 @@ plt.show()
 plt.imshow(hmap.reshape(hmap.shape[1],hmap.shape[2]) , cmap = c.jet )
 plt.show()
 """
-#测试170,171,181
+#170,171,181
 ans,img,hmap = predict('data/part_A_final/test_data/images/IMG_170.jpg')
 
 print("Predict Count:",ans)
