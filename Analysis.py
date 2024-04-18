@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  3 14:50:14 2018
-
-@author: lenovo
-"""
 
 from keras.models import model_from_json
 import os
