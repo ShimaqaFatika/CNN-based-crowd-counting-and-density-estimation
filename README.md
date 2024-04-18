@@ -1,18 +1,3 @@
-# CSRNet-keras
-Implementation of the CSRNet paper (CVPR 18) in keras-tensorflow. First ever to be done in keras-tf as of 21/9/18.
-
-Mindspark Hackathon Winning Project(Kumbh-Mela Disaster Management):
-
-Team : Pratik Ratadiya(Web/Django), Aditya Malte(ML/DL), Kshitij Patil(Android), Neeraj Panse(ML/DL)
-
-In order to aid the ML/DL community, we have open sourced the deep learning part of the project.
-
-### CVPR 2018 Paper : https://arxiv.org/abs/1802.10062
-
-### Official Pytorch Implementation : https://github.com/leeyeehoo/CSRNet-pytorch
-
-As we were searching over the internet, we could not find any keras implementation of the state of the art paper CSRNet. A large part of the deep learning community uses keras-tensorflow to implement their neural network models. Thus, we implemented the CSRNet model in keras-tensorflow. Tensorflow has a massive advantage when it comes to deployability(eg. Android,etc).
-
 # Dataset :
 The dataset used is ShanghaiTech dataset available here : [Drive Link](https://drive.google.com/file/d/16dhJn7k4FWVwByRsQAEpl9lwjuV03jVI/view)
 
